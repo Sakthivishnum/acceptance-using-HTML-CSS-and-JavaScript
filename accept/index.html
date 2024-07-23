@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Centered Alert Box</title>
+    <style>
+      .container-main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 10rem;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+
+      .modal-content {
+        background-color: #28e117;
+        color: #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        width: 50%;
+        text-align: center;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .close {
+        color: #070707;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: black;
+        cursor: pointer;
+      }
+
+      .modal-heading {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      .open-modal-btn {
+        background-color: #4caf50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        font-size: 16px;
+        margin: 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .open-modal-btn:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container-main">
+      <h1>Welcome to Centered Alert Box Example</h1>
+      <button class="open-modal-btn">Submit</button>
+    </div>
+
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 class="modal-heading">This is a alert message.</h2>
+        <p>Your data is submitted.</p>
+      </div>
+    </div>
+
+    <script>
+      let open_modal_btn = document.querySelector(".open-modal-btn");
+      let my_model = document.getElementById("myModal");
+      let close_btn = document.querySelector(".close");
+
+      open_modal_btn.addEventListener("click", function () {
+        my_model.style.display = "block";
+      });
+
+      close_btn.addEventListener("click", function () {
+        my_model.style.display = "none";
+      });
+    </script>
+  </body>
+</html>
